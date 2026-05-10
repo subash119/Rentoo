@@ -372,8 +372,8 @@ A modern web application for renting and listing items, built with React, TypeSc
 2. Environment configuration:
    Create `.env` file:
    ```
-   VITE_API_URL=${import.meta.env.VITE_API_URL}
-   VITE_UPLOAD_URL=${import.meta.env.VITE_API_URL}/uploads
+   VITE_API_URL=http://localhost:5000
+   VITE_UPLOAD_URL=http://localhost:5000/uploads
    ```
 
 3. Start development server:

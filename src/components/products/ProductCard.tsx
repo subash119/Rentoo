@@ -22,7 +22,7 @@ export function ProductCard({
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img 
         src={Array.isArray(product.images) && product.images.length > 0 
-          ? `${import.meta.env.VITE_API_URL}/uploads/products/${product.images[0]}`
+          ? `http://localhost:5000/uploads/products/${product.images[0]}`
           : '/placeholder-image.jpg'} 
         alt={product.title}
         className="w-full h-48 object-cover"

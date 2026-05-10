@@ -77,10 +77,10 @@ const AdminDashboard = () => {
 
       // Fetch all data in parallel
       const [usersResponse, productsResponse, rentalsResponse, statsResponse] = await Promise.all([
-        fetch('${import.meta.env.VITE_API_URL}/api/v1/admin/users', { headers }),
-        fetch('${import.meta.env.VITE_API_URL}/api/v1/admin/products', { headers }),
-        fetch('${import.meta.env.VITE_API_URL}/api/v1/admin/rentals', { headers }),
-        fetch('${import.meta.env.VITE_API_URL}/api/v1/admin/stats', { headers })
+        fetch('http://localhost:5000/api/v1/admin/users', { headers }),
+        fetch('http://localhost:5000/api/v1/admin/products', { headers }),
+        fetch('http://localhost:5000/api/v1/admin/rentals', { headers }),
+        fetch('http://localhost:5000/api/v1/admin/stats', { headers })
       ]);
 
       // Check for errors
@@ -117,7 +117,7 @@ const AdminDashboard = () => {
 
   const handleDeleteUser = async (userId: string) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/admin/users/${userId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/admin/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -137,7 +137,7 @@ const AdminDashboard = () => {
 
   const handleDeleteProduct = async (productId: string) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/admin/products/${productId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/admin/products/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

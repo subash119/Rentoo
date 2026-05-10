@@ -30,8 +30,8 @@ const ProductList: React.FC<ProductListProps> = ({ vendorView = false, searchQue
     const fetchProducts = async () => {
       try {
         const url = vendorView
-          ? '${import.meta.env.VITE_API_URL}/api/vendor/products'
-          : '${import.meta.env.VITE_API_URL}/api/products';
+          ? 'http://localhost:5000/api/vendor/products'
+          : 'http://localhost:5000/api/products';
         
         const headers: HeadersInit = {
           'Content-Type': 'application/json'

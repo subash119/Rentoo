@@ -41,7 +41,7 @@ const upload = multer({
 
 // Helper function to get image URL
 const getImageUrl = (filename) => {
-    return `${import.meta.env.VITE_API_URL}/uploads/products/${filename}`;
+    return `http://localhost:5000/uploads/products/${filename}`;
 };
 
 // Helper function to delete file

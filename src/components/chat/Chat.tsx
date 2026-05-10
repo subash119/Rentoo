@@ -4,7 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import './Chat.css';
 
 // Configure axios base URL
-axios.defaults.baseURL = '${import.meta.env.VITE_API_URL}';
+axios.defaults.baseURL = 'http://localhost:5000';
 
 interface Message {
     _id: string;

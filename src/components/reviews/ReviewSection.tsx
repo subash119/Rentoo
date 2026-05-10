@@ -56,7 +56,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ productId }) => {
         return;
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/reviews/product/${productId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/reviews/product/${productId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -95,8 +95,8 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ productId }) => {
       }
 
       const url = editingReview 
-        ? `${import.meta.env.VITE_API_URL}/api/v1/reviews/${editingReview._id}`
-        : '${import.meta.env.VITE_API_URL}/api/v1/reviews';
+        ? `http://localhost:5000/api/v1/reviews/${editingReview._id}`
+        : 'http://localhost:5000/api/v1/reviews';
 
       const method = editingReview ? 'PUT' : 'POST';
 
@@ -159,7 +159,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ productId }) => {
         return;
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/reviews/${reviewId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/reviews/${reviewId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
