@@ -40,7 +40,7 @@ interface ApiRentalRequest extends Omit<RentalRequest, 'product'> {
   product?: Product;
 }
 
-const API_URL = 'http://localhost:5000';
+const API_URL = '${import.meta.env.VITE_API_URL}';
 
 const VendorDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'products' | 'requests' | 'chats'>('products');

@@ -43,7 +43,7 @@ const ProductEditForm: React.FC = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -72,7 +72,7 @@ const ProductEditForm: React.FC = () => {
         // Set existing image previews
         if (product.images && product.images.length > 0) {
           setPreviewUrls(product.images.map(
-            (image: string) => `http://localhost:5000/uploads/products/${image}`
+            (image: string) => `${import.meta.env.VITE_API_URL}/uploads/products/${image}`
           ));
         }
       } catch (err) {
@@ -147,7 +147,7 @@ const ProductEditForm: React.FC = () => {
         formDataToSend.append('images', file);
       });
 
-      const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
