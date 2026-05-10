@@ -20,13 +20,13 @@ const app = express();
 createUploadDir();
 
 // Enable CORS for all routes
-app.use(cors({
+const corsOptions = {
   origin: ['http://localhost:5173', 'https://rentoo-one.vercel.app'],
   credentials: true
-}));
+};
 
-// Enable pre-flight requests for all routes
-app.options('*', cors());
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Middleware
 app.use(express.json());
