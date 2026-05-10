@@ -21,7 +21,7 @@ createUploadDir();
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'https://rentoo.vercel.app'],
   credentials: true
 }));
 
