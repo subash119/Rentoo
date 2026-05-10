@@ -96,7 +96,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ productId }) => {
 
       const url = editingReview 
         ? `http://localhost:5000/api/v1/reviews/${editingReview._id}`
-        : 'http://localhost:5000/api/v1/reviews';
+        : `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/reviews`;
 
       const method = editingReview ? 'PUT' : 'POST';
 

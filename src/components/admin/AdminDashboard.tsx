@@ -77,10 +77,10 @@ const AdminDashboard = () => {
 
       // Fetch all data in parallel
       const [usersResponse, productsResponse, rentalsResponse, statsResponse] = await Promise.all([
-        fetch('http://localhost:5000/api/v1/admin/users', { headers }),
-        fetch('http://localhost:5000/api/v1/admin/products', { headers }),
-        fetch('http://localhost:5000/api/v1/admin/rentals', { headers }),
-        fetch('http://localhost:5000/api/v1/admin/stats', { headers })
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/admin/users`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/admin/products`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/admin/rentals`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/admin/stats`, { headers })
       ]);
 
       // Check for errors

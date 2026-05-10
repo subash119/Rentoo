@@ -30,7 +30,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch('http://localhost:5000/api/v1/auth/me', {
+          const response = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/auth/me`, {
             headers: {
               'Authorization': `Bearer ${token}`
             }
@@ -70,7 +70,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const register = async (name: string, email: string, password: string, role: User['role']) => {
     try {
       setError(null);
-      const response = await fetch('http://localhost:5000/api/v1/auth/register', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
