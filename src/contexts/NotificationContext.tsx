@@ -36,7 +36,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const fetchNotifications = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('/api/v1/notifications', {
+      const response = await fetch(\${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/notifications`', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -52,7 +52,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const markAsRead = async (id: string) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`/api/v1/notifications/${id}/read`, {
+      await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/notifications/${id}/read`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -67,7 +67,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const markAllAsRead = async () => {
     try {
       const token = localStorage.getItem('token');
-      await fetch('/api/v1/notifications/mark-all-read', {
+      await fetch(\${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/v1/notifications`/mark-all-read', {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
